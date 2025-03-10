@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import User from "../models/userModels.js";
 
 export const getAllUsers = async (req, res) => {
@@ -27,7 +26,7 @@ export const createUser = async (req, res) => {
 export const deleteUser = async (req, res) => {
   const idUser = req.params.id;
 
-  const usuario = await User.deleteOne({ id: idUser });
+  const usuario = await User.deleteOne({ _id: idUser });
 
   res.status(200).json({ message: "Usuario deletado com sucesso!" });
 };
